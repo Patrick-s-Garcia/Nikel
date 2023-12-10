@@ -44,6 +44,7 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     
     const email = document.getElementById("Email-create-input").value;
     const senha = document.getElementById("password-create-input").value;
+    const confirma = document.getElementById("confirma-create-input").value;
 
     if(email.length <5) { 
         alert("Preencha o campo com um e-mail valido.")
@@ -52,6 +53,11 @@ document.getElementById("create-form").addEventListener("submit", function(e){
 
     if(senha.length<4) {
         alert("Preencha a senha com no mínimo 4 digitos")
+        return;
+    }
+
+    if(senha != confirma) {
+        alert("Os valores nos campos Senha e Confirmar Senha não correspondem.")
         return;
     }
 

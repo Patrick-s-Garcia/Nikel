@@ -176,10 +176,13 @@ function gettotal(){
             total -= item.value
         }
     });
-    document.getElementById("total").innerHTML = `R$ ${total.toFixed(2)}`;
+    if (total <= 0.00) {
+        alert("Atenção, seu saldo após cadastrar esta despesa será negativo, deseja continuar?");
+    }
+
+    document.getElementById("total").innerHTML = total.toFixed(2);
 
 }
-
 
 function savedata(data){
     localStorage.setItem(data.login, JSON.stringify(data))
