@@ -176,7 +176,7 @@ function gettotal(){
             total -= item.value
         }
     });
-    if (total <= 0.00) {
+    if (total < 0.00) {
         alert("Atenção, seu saldo após cadastrar esta despesa será negativo, deseja continuar?");
     }
 
